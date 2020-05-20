@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Dice Game</title>
+<link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+<body>
+<div class="container">
+<h1>DICE GAME</h1>
+<div class="dice">
+<p>Player 1</p>
+<img src="images/Dice1.png" id="check1" />
+</div>
+<div class="dice">
+<p>Player 2</p>
+<img src="images/Dice1.png" id="check2" />
+</div>
+<div>
+<br/>
+<button onclick="diceGame()">Click Me!</button>
+</div>
+</div>
+<script>
+diceGame = () => {
+const play1=Math.floor(Math.random()*6)+1;
+const play1Dice="images/Dice"+play1+".png"
+document.getElementById('check1').setAttribute('src',play1Dice);
+
+const play2=Math.floor(Math.random()*6)+1;
+const play2Dice="images/Dice"+play2+".png"
+document.getElementById('check2').setAttribute('src',play2Dice);
+
+if(play1>play2)
+{
+    document.querySelector('h1').innerHTML="Player1 won :)";
+}
+else if(play1<play2)
+{
+    document.querySelector('h1').innerHTML="Player2 won :)";
+
+}
+else
+{
+    document.querySelector('h1').innerHTML="DRAW!!!!";
+
+}
+}
+</script>
+</body>
+</html>
